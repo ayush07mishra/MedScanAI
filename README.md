@@ -26,10 +26,11 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 ![Medicine Recognition](https://github.com/user-attachments/assets/6afc6d39-ff96-42fc-9214-0542ac8ac0a9)
 
 ### 🔹 Doctor & Pharmacy Locator
-![Doctor & Pharmacy Locator](https://github.com/user-attachments/assets/f550a814-fd9d-4558-af69-4558f5b40db7)
+![Mental Health Assessment](https://github.com/user-attachments/assets/31f78854-5272-4123-9d41-1c48611f9ae0)
 
 ### 🔹 Mental Health Assessment
-![Mental Health Assessment](https://github.com/user-attachments/assets/31f78854-5272-4123-9d41-1c48611f9ae0)
+![Doctor & Pharmacy Locator](https://github.com/user-attachments/assets/f550a814-fd9d-4558-af69-4558f5b40db7)
+
 
 ### 🔹 User-Friendly Interface
 ![User-Friendly Interface](https://github.com/user-attachments/assets/29273a0a-2140-4919-8d3c-1a187146f94e)
