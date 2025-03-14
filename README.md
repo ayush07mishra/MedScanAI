@@ -20,13 +20,13 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 
 https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
 
-
-![Dashboard](https://github.com/user-attachments/assets/aa0d7cab-fc62-4f56-83ff-b40cfb9638c4)
-
 ### 🔹 Medical Scan Analysis
+![Dashboard](https://github.com/user-attachments/assets/aa0d7cab-fc62-4f56-83ff-b40cfb9638c4)
 ![Medical Scan Analysis](https://github.com/user-attachments/assets/29b850e7-0659-4003-951f-8eba8644c9c6)
 
 ### 🔹 Medicine Recognition
+![Medical Scan Analysis](https://github.com/user-attachments/assets/29b850e7-0659-4003-951f-8eba8644c9c6)
+
 ![Medicine Recognition](https://github.com/user-attachments/assets/6afc6d39-ff96-42fc-9214-0542ac8ac0a9)
 
 ### 🔹 Doctor & Pharmacy Locator
@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
 ![Doctor & Pharmacy Locator](https://github.com/user-attachments/assets/f550a814-fd9d-4558-af69-4558f5b40db7)
 
 
-### 🔹 User-Friendly Interface
+### 🔹 Conclusion
 ![User-Friendly Interface](https://github.com/user-attachments/assets/29273a0a-2140-4919-8d3c-1a187146f94e)
 
 ---
