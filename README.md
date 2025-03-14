@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
 ![Medical Scan Analysis](https://github.com/user-attachments/assets/29b850e7-0659-4003-951f-8eba8644c9c6)
 
 ### 🔹 Medicine Recognition
-![Medical Scan Analysis](https://github.com/user-attachments/assets/29b850e7-0659-4003-951f-8eba8644c9c6)
+
 
 ![Medicine Recognition](https://github.com/user-attachments/assets/6afc6d39-ff96-42fc-9214-0542ac8ac0a9)
 
