@@ -1,0 +1,325 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 50px;
+  }
+  
+  /* Section Spacing */
+  section {
+    padding: 2rem 2rem; /* Reduced padding */
+  }
+  
+  /* Main Container */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1210px;
+    margin: 30px auto; /* Reduced margin */
+    padding: 1.5rem; /* Reduced padding */
+    gap: 15px; /* Slightly reduced gap */
+  }
+  
+  /* Content Section */
+  .content, .content-section {
+    flex: 1;
+    padding: 15px; /* Reduced padding */
+  }
+  
+  .content h1, .content-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+  
+  .content p, .content-section p {
+    margin: 1rem 0; /* Reduced margin */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 0.8rem; /* Reduced gap */
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem; /* Reduced padding */
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+  }
+  
+  .btn-secondary {
+    background-color: #eaeaea;
+    color: #000;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Image Section */
+  .image, .image-section {
+    flex: 1;
+    max-width: 55%; /* Adjusted for more compact layout */
+    padding: 15px; /* Reduced padding */
+  }
+  
+  .image img, .image-section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Features Section */
+  .features {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+  
+  .feature {
+    width: 30%;
+    text-align: center;
+  }
+  
+  /* Card Section */
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    padding: 1rem; /* Reduced padding */
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Info Items */
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+  
+  .info-item .icon {
+    font-size: 2.5rem; /* Increased font size */
+    margin-right: 15px;
+    color: #8e44ad;
+  }
+  
+  /* Steps Section */
+/* Steps Section */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Adjusted gap for better spacing */
+  }
+  
+  .step {
+    display: flex;
+    align-items: flex-start; /* Align items to the top for better alignment */
+    gap: 1rem; /* Adjusted gap between number and text */
+  }
+  
+  /* Step Number Styling */
+  .step-number {
+    background-color: #6c63ff;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    width: 36px;
+    text-align: center;
+  }
+  
+  /* Step Content Styling */
+  .step-content {
+    flex: 1; /* Ensure the content takes up remaining space */
+  }
+  
+  .step-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  
+  /* Results Section */
+  .results {
+    flex: 2;
+    padding: 2rem;
+  }
+  
+  /* Heading Styles */
+  .results h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Individual Result Items */
+  .result-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 0; /* Vertical padding for separation */
+
+  }
+  
+  .result-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+  }
+  
+ /* Number Styles */
+
+.number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #8e44ad; /* Black background for numbers */
+    color: #fff; /* White text for contrast */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    border-radius: 5px; /* Slight rounding for a square shape */
+  }
+  
+  
+  /* Text Content */
+  .text h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Click Button */
+  .click-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+  }
+  
+  .click-button:hover {
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+  }
+  
+  /* Illustration Section */
+  .illustration {
+    flex: 1.5; /* Increased width allocation */
+    max-width: 65%; /* Increased maximum width */
+  }
+  
+  .illustration img {
+    width: 100%;
+    max-width: 700px;
+    height: 700px; /* Increased height */
+    object-fit: cover;
+    display: block;
+    border-radius: 10px; /* Maintain rounded corners */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: right;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .content, .image, .content-section, .image-section, .illustration {
+      max-width: 100%;
+      margin-bottom: 1rem; /* Reduced margin */
+    }
+  
+    .feature, .card, .info-item {
+      width: 100%;
+    }
+  
+    .steps {
+      align-items: center;
+    }
+  
+    .illustration img {
+      height: auto;
+    }
+  }
+  

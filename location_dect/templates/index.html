@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Medical Stores & Doctors</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <h2>Find Nearby Medical Stores & Doctors</h2>
+
+    <label>Enter Latitude:</label>
+    <input type="text" id="latitude" placeholder="26.4792">
+    <label>Enter Longitude:</label>
+    <input type="text" id="longitude" placeholder="80.3058">
+
+    <button onclick="fetchNearby('medical_store')">Find Medical Stores</button>
+    <button onclick="fetchNearby('doctor')">Find Doctors</button>
+
+    <div id="map" style="height: 400px; width: 100%;"></div>
+
+    <script>
+        var map = L.map('map').setView([26.4792, 80.3058], 12); // Default to Kanpur
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        function fetchNearby(type) {
+            let lat = document.getElementById("latitude").value;
+            let lng = document.getElementById("longitude").value;
+
+            fetch(`/nearby?lat=${lat}&lng=${lng}&type=${type}`)
+                .then(response => response.json())
+                .then(data => {
+                    map.eachLayer(layer => {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);
+                        }
+                    });
+
+                    if (data.error) {
+                        alert(data.error);
+                        return;
+                    }
+
+                    data.forEach(place => {
+                        L.marker([place.latitude, place.longitude])
+                            .addTo(map)
+                            .bindPopup(`<b>${place.name}</b><br>Distance: ${place.distance} km`);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+
+</html>

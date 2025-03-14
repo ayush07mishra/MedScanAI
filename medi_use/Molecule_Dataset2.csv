@@ -1,0 +1,26 @@
+Molecule Name,Drug Class,Indications (Uses),Dosage Form,Recommended Duration,Side Effects,Special Precautions
+Oseltamivir,Antiviral (Neuraminidase Inhibitor),Treatment and prevention of Influenza A and B,"Capsule, Oral Suspension",5-10 days,"Nausea, Vomiting, Headache",Use with caution in patients with renal impairment
+Zanamivir,Antiviral (Neuraminidase Inhibitor),Treatment and prevention of Influenza A and B,Inhalation Powder,5 days,"Cough, Throat irritation, Headache",Avoid use in patients with respiratory diseases
+Pseudoephedrine,Decongestant,Relief of nasal and sinus congestion,"Tablet, Syrup","As needed, typically 3-5 days","Insomnia, Increased heart rate, Restlessness",Avoid in patients with hypertension or heart disease
+Oxymetazoline,Decongestant,Relief of nasal congestion,Nasal Spray,Not more than 3 consecutive days,"Nasal dryness, Rebound congestion",Avoid prolonged use; use with caution in children
+Chlorpheniramine,Antihistamine (First-Generation),Relieves allergy symptoms like sneezing and itching,"Tablet, Syrup, Injection","As needed, typically 3-5 days","Drowsiness, Dry mouth, Dizziness",Avoid alcohol; caution in elderly patients
+Diphenhydramine,Antihistamine (First-Generation),Relieves runny nose and sneezing due to allergies or cold,"Tablet, Syrup, Injection","As needed, typically 3-5 days","Drowsiness, Dry mouth, Dizziness",Avoid activities requiring alertness; use caution in elderly patients
+Paracetamol,Analgesic and Antipyretic,Relief of pain and fever,"Tablet, Syrup, Injection","As needed, typically 3-5 days","Liver toxicity (with overdose), Nausea",Avoid overdose; caution in patients with liver disease
+Ibuprofen,Non-Steroidal Anti-Inflammatory Drug (NSAID),"Relief of pain, inflammation, and fever","Tablet, Syrup, Topical Gel","As needed, typically 3-5 days","Stomach upset, Nausea, Heartburn",Take with food; caution in patients with ulcers or kidney disease
+Dextromethorphan,Cough Suppressant,Relief of dry cough,"Syrup, Tablet, Lozenge","As needed, typically 3-5 days","Drowsiness, Dizziness, Nausea",Avoid alcohol; caution in children
+Oral Rehydration Salts (ORS),Rehydration Therapy,Rehydration and electrolyte replenishment in diarrhea or dehydration,Powder for oral solution,As needed until rehydrated,None when used as directed,Use caution in patients with kidney issues or hypernatremia
+Chloroquine,Antimalarial,Treatment and prevention of malaria,Tablet,"As prescribed, typically 3-7 days","Nausea, Headache, Visual disturbances",Avoid in patients with retinal or vision problems
+Artemether,Antimalarial,Treatment of malaria (often in combination with Lumefantrine),"Tablet, Injection",Typically 3 days,"Dizziness, Nausea, Fatigue",Avoid in first trimester of pregnancy
+Lumefantrine,Antimalarial,Treatment of malaria (used with Artemether),Tablet,Typically 3 days,"Headache, Weakness, Loss of appetite",Take with food for better absorption
+Quinine,Antimalarial,Treatment of severe or drug-resistant malaria,"Tablet, Injection","As prescribed, typically 7 days","Tinnitus, Nausea, Visual disturbances",Caution in patients with cardiac issues
+Doxycycline,Antibiotic (Tetracycline class),"Treatment of malaria, bacterial infections, and acne","Tablet, Capsule","As prescribed, typically 7-14 days","Sun sensitivity, Nausea, Diarrhea",Avoid in children under 8 and pregnant women
+Ciprofloxacin,Antibiotic (Fluoroquinolone class),Treatment of bacterial infections including typhoid,"Tablet, Injection","As prescribed, typically 7-14 days","Nausea, Diarrhea, Tendon pain",Avoid in children and during pregnancy
+Azithromycin,Antibiotic (Macrolide class),Treatment of bacterial infections including typhoid,"Tablet, Syrup, Injection",Typically 3-5 days,"Diarrhea, Nausea, Abdominal pain",Use with caution in patients with liver disease
+Ceftriaxone,Antibiotic (Cephalosporin class),Treatment of severe bacterial infections including typhoid,Injection,"As prescribed, typically 7-14 days","Diarrhea, Allergic reactions, Pain at injection site",Monitor for allergic reactions
+Loratadine,Antihistamine (Second-Generation),Relieves allergy symptoms like runny nose and itching,"Tablet, Syrup",As needed,"Headache, Fatigue",Use with caution in liver disease
+Cetirizine,Antihistamine (Second-Generation),Relieves allergy symptoms and hay fever,"Tablet, Syrup",As needed,"Drowsiness, Dry mouth",Avoid alcohol; use with caution in renal impairment
+Fluticasone,Corticosteroid,Relief of asthma and nasal allergy symptoms,"Nasal spray, Inhaler",As prescribed,"Nasal irritation, Cough",Rinse mouth after inhalation to prevent infections
+Fexofenadine,Antihistamine (Second-Generation),Relieves allergy symptoms,Tablet,As needed,"Headache, Fatigue",Use caution in kidney disease
+Montelukast,Leukotriene Receptor Antagonist,Treatment of asthma and allergies,Tablet,As prescribed,"Headache, Abdominal pain",Monitor for mood changes
+Acyclovir,Antiviral,Treatment of herpes simplex and varicella-zoster infections,"Tablet, Cream, Injection","As prescribed, typically 5-10 days","Nausea, Headache, Fatigue",Maintain hydration during treatment
+Ganciclovir,Antiviral,Treatment of cytomegalovirus (CMV) infections,"Injection, Oral capsule",As prescribed,"Bone marrow suppression, Nausea, Fever",Monitor blood counts regularly
