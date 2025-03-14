@@ -17,6 +17,10 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 ## 🖥️ Screenshots
 
 ### 🔹 Dashboard
+
+https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
+
+
 ![Dashboard](https://github.com/user-attachments/assets/aa0d7cab-fc62-4f56-83ff-b40cfb9638c4)
 
 ### 🔹 Medical Scan Analysis
