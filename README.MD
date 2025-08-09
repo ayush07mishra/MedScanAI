@@ -23,6 +23,11 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 
 ---
 
+# LIVE LINK : https://medscanai-pksi.onrender.com/
+
+
+---
+
 ## 🔐 Authentication Module
 - Built using **Node.js**, **Express**, and **MongoDB**
 - Supports **JWT-based login/signup**
@@ -32,7 +37,7 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 ---
 
 ## Backend – Auth System (Node.js)
-# Navigate to auth directory
+## Navigate to auth directory
 cd auth
 
 ## Install Node.js dependencies
@@ -52,7 +57,6 @@ cd MedScanAI
 # Install Python dependencies
 pip install -r requirements.txt
 
-#LIVE LINK-> https://medscanai-pksi.onrender.com/
 
 
 
