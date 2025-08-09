@@ -35,10 +35,10 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 # Navigate to auth directory
 cd auth
 
-# Install Node.js dependencies
+## Install Node.js dependencies
 npm install
 
-# Start the server
+## Start the server
 node index.js
 
 ## 🔧 Installation & Setup
@@ -51,6 +51,11 @@ cd MedScanAI
 
 # Install Python dependencies
 pip install -r requirements.txt
+
+#LIVE LINK-> https://medscanai-pksi.onrender.com/
+
+
+
 
 # Run Flask App
 python app.py
