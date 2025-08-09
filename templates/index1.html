@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedScanAI</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+ /*naviagation bar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* For body and html */
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation bar styling */
+nav {
+  background-color: rgba(244, 240, 240, 0.8); 
+  padding: 1.3rem 4rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+/* Logo Styling */
+nav .logo {
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(90deg, #4d44ad, #6663ff, #e533d9, #aa00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+/* Navigation Links Styling */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  color: #160d0d;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0d6efd;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="/" class="logo">MedScanAI</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <div class="content">
+        <h1 style="font-size: 3.2rem;">MedScanAI: Revolutionizing Healthcare</h1>
+        <p style="font-size: 1.2rem;">Empowering patients with AI-driven health insights and personalized care.</p>
+        <div class="buttons">
+          <a href="/login">
+  <button class="btn btn-primary">Get Started</button>
+</a>
+
+          <button class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="/assets/h1.jpg" alt="MedScanAI">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="about">
+    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">Introduction to MedScanAI</h1>
+    <div class="features">
+      <div class="feature">
+        <h2>Comprehensive Care</h2>
+        <p>MedScanAI provides AI-powered analysis of medical scans, lab reports, and symptoms to deliver personalized
+          healthcare recommendations.</p>
+      </div>
+      <div class="feature">
+        <h2>Accessible Insights</h2>
+        <p>Our intuitive platform empowers patients to take an active role in their health, bridging the gap between
+          doctors and the people they serve.</p>
+      </div>
+      <div class="feature">
+        <h2>Trusted Expertise</h2>
+        <p>Developed by leading medical professionals, MedScanAI harnesses the power of artificial intelligence to
+          revolutionize the future of healthcare.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Med Scan Section -->
+  <section id="medscan">
+    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">Med Scan</h1>
+    <div class="cards">
+      <div class="card">
+        <h2>Scan Diagnosis</h2>
+        <p>Our advanced AI algorithms analyze your medical scans to detect any abnormalities or areas of concern.</p>
+      </div>
+      <div class="card">
+        <h2>Personalized Insights</h2>
+        <p>Get detailed, easy-to-understand reports on your scan results and recommended next steps for your care.</p>
+      </div>
+      <div class="card">
+        <h2>Secure & Confidential</h2>
+        <p>Your personal health information is always protected with the highest standards of data privacy and security.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medicine Info Section -->
+  <section id="medicineinfo">
+    <div class="container">
+      <div class="content">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Medicine Info: Search Medications and Get Details on Usage
+          and Side Effects</h1>
+        <div class="cards">
+          <div class="card">
+            <h2>Easy Search</h2>
+            <p>Quickly find information on any medication by searching by name, condition, or active ingredient.</p>
+          </div>
+          <div class="card">
+            <h2>Detailed Information</h2>
+            <p>Get comprehensive information on usage, dosage, interactions, side effects, and more.</p>
+          </div>
+          <div class="card">
+            <h2>Personalized Insights</h2>
+            <p>Receive personalized reminders and alerts to help you stay on track with your medication regimen.</p>
+          </div>
+          <a href="/medi_scan/" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="https://cdn.gamma.app/ggac5xzx1599xch/generated-images/clw6toeaNRMhyNCe2iI9X.jpg" alt="Medicine Info">
+      </div>
+    </div>
+  </section>
+
+  <!-- Share Medical Scans Section -->
+  <section>
+    <div class="container">
+      <div class="image-section">
+        <img src="https://cdn.gamma.app/y6c0k1dovixdjxh/generated-images/3H8d0UAiJCF5ZeIvEkb0T.jpg" alt="Medical Scan Image">
+      </div>
+      <div class="content-section">
+        <h1>Share Medical Scans</h1>
+        <div>
+          <div class="icon">📄</div>
+          <h2>X-rays</h2>
+          <p>Upload your X-rays for a thorough analysis by our AI system.</p>
+        </div>
+        <div>
+          <div class="icon">📃</div>
+          <h2>MRIs</h2>
+          <p>Share your MRI scans to receive a detailed interpretation from our AI experts.</p>
+        </div>
+        <div>
+          <div class="icon">🩸</div>
+          <h2>Blood Tests</h2>
+          <p>Share your blood test results to receive a detailed interpretation from our AI experts.</p>
+        </div>
+        <a href="/x_ray/" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Q&A Section -->
+  <section id="healthqa">
+    <div class="container">
+      <div class="content">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Health Q&A: Ask Questions and Get AI-Powered Answers for
+          Better Health</h1>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h2>Ask Any Question</h2>
+              <p>Ask any question related to your health, from general information to specific concerns.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h2>Receive Insights</h2>
+              <p>Receive evidence-based information and insights from our reliable AI-powered health assistant.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h2>Personalized Recommendations</h2>
+              <p>Get personalized recommendations to help you make informed decisions about your health.</p>
+            </div>
+          </div>
+        </div>
+        <a href="/health_qa/" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
+      </div>
+      <div class="image">
+        <img src="https://cdn.gamma.app/ggac5xzx1599xch/generated-images/PPu82JDT0OWckPKbr-7Qv.jpg" alt="Health Q&A">
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Help Section -->
+  <section id="nearbyhelp">
+    <div class="container">
+      <div class="image">
+        <img src="https://cdn.gamma.app/ggac5xzx1599xch/generated-images/ot0XiETONMwT2yYk7lXkK.jpg" alt="Map with GPS Markers">
+      </div>
+      <div class="content">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Nearby Help: <span>Locate Doctors, Pharmacies, and Medical
+            Facilities with GPS</span></h1>
+        <div class="info-item">
+          <div class="icon">👨‍⚕️</div>
+          <div>
+            <h2>Doctors</h2>
+            <p>Find qualified doctors specializing in various fields near you.</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="icon">💊</div>
+          <div>
+            <h2>Pharmacies</h2>
+            <p>Locate pharmacies for prescription refills and over-the-counter medications.</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="icon">🏥</div>
+          <div>
+            <h2>Medical Facilities</h2>
+            <p>Discover hospitals, clinics, and other medical facilities in your area.</p>
+          </div>
+        </div>
+        <a href="/nearby_help/" class="btn btn-primary">Click Here</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mental Health Check Results Section -->
+  <section id="mentalhealth">
+    <div class="container">
+      <div class="results">
+        <h1>Mental Health Check and Support</h1>
+        <div class="result-item">
+          <div class="number">1</div>
+          <div class="text">
+            <h2>Stable Mental Health</h2>
+            <p>Your responses suggest a generally positive and stable mental health profile. Keep up the great work!</p>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="number">2</div>
+          <div class="text">
+            <h2>Potential Areas for Improvement</h2>
+            <p>Your answers indicate some potential areas for attention. Explore these insights and consider additional
+              support options.</p>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="number">3</div>
+          <div class="text">
+            <h2>Seek Professional Guidance</h2>
+            <p>Based on your answers, it's strongly recommended that you consult a mental health professional. We're
+              here to help connect you.</p>
+            <a href="/mental_health/" class="click-button">Click Here</a>
+          </div>
+        </div>
+      </div>
+      <div class="illustration">
+        <img src="/assets/image 2.webp" alt="Mental Health Illustration">
+      </div>
+    </div>
+  </section>
+
+</body>
+
+<script>
+  function openSignup() {
+    window.open('signup.html', 'Signup', 'width=500,height=600');
+  }
+</script>
+
+</html>

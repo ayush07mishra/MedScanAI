@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nearby Medical Stores & Doctors</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            margin: 100px auto 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        button {
+            background: linear-gradient(45deg, #007bff, #00d4ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0056b3, #00a3cc);
+            transform: translateY(-3px);
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loader Animation */
+        #loader {
+            display: none;
+            margin-top: 20px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Find Nearby Medical Stores & Doctors 🏥</h2>
+        <input type="text" id="location" placeholder="Enter city name (e.g., Kanpur)" />
+        <button onclick="getLocation()">📍 Use Current Location</button>
+        <button onclick="getLocationAndFetch('medical_store')">🛒 Find Medical Stores</button>
+        <button onclick="getLocationAndFetch('doctor')">👨‍⚕️ Find Doctors</button>
+        <button onclick="scrollToMap()">⬇️ View Map</button>
+        <div id="loader"></div>
+    </div>
+
+    <div id="map"></div>
+
+    <script>
+        // Initialize Map
+        var map = L.map('map').setView([26.4792, 80.3058], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Scroll to Map
+        function scrollToMap() {
+            document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    document.getElementById('location').value = `${position.coords.latitude},${position.coords.longitude}`;
+                    alert('Location captured successfully! ✅');
+                }, error => {
+                    alert("Failed to capture location. Please allow location access.");
+                });
+            } else {
+                alert("Geolocation not supported by this browser.");
+            }
+        }
+
+        function getLocationAndFetch(type) {
+            const locationInput = document.getElementById('location').value;
+
+            if (!locationInput) {
+                alert("Please enter a city name or use current location.");
+                return;
+            }
+
+            // Geocode to convert city to coordinates
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationInput)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        alert("Location not found. Please try again.");
+                        return;
+                    }
+                    const lat = data[0].lat;
+                    const lng = data[0].lon;
+                    showLoader();
+                    fetchNearby(type, lat, lng);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to fetch location. Please try again.');
+                });
+        }
+
+        function fetchNearby(type, lat, lng) {
+            fetch(`nearby?lat=${lat}&lng=${lng}&type=${type}`)
+                .then(response => response.json())
+                .then(data => {
+                    map.eachLayer(layer => {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);
+                        }
+                    });
+
+                    hideLoader();
+
+                    if (data.error) {
+                        alert(data.error);
+                        return;
+                    }
+
+                    data.forEach(place => {
+                        L.marker([place.latitude, place.longitude])
+                            .addTo(map)
+                            .bindPopup(`<b>${place.name}</b><br>Distance: ${place.distance} km`);
+                    });
+
+                    alert(`${data.length} results found!`);
+                })
+                .catch(error => {
+                    hideLoader();
+                    console.error('Error:', error);
+                    alert('Failed to fetch data. Please try again later.');
+                });
+        }
+
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

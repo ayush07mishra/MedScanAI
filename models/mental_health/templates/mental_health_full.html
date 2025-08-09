@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #e6f7f8;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #1a73e8;
+            margin: 0;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .progress-step {
+            text-align: center;
+            position: relative;
+            width: 33.33%;
+        }
+
+        .progress-step::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #d9d9d9;
+            z-index: 0;
+            transform: translateY(-50%);
+            transition: background-color 0.5s ease;
+        }
+
+        .progress-step:first-child::before {
+            left: 50%;
+        }
+
+        .progress-step:last-child::before {
+            right: 50%;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            z-index: 1;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.5s ease;
+        }
+
+        .circle.completed {
+            background: #1a73e8;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-label {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question label {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .option {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            background: #f9f9f9;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, transform 0.2s;
+        }
+
+        .option:hover {
+            background: #1a73e8;
+            color: white;
+            border-color: #1a73e8;
+            transform: translateY(-3px);
+        }
+
+        .option.selected {
+            background: #1a73e8;
+            color: white;
+            border-color: #1a73e8;
+            animation: bounce 0.4s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .next-button {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .next-button button {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .next-button button:hover {
+            background-color: #005f87;
+            transform: translateY(-3px);
+        }
+
+        .next-button button span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Depression Test</h1>
+        </header>
+
+        <main>
+            <div class="progress-bar">
+                <div class="progress-step">
+                    <div class="circle completed">1</div>
+                    <div class="step-label">Test Questions</div>
+                </div>
+                <div class="progress-step">
+                    <div class="circle">2</div>
+                    <div class="step-label">Optional Questions</div>
+                </div>
+                <div class="progress-step">
+                    <div class="circle">3</div>
+                    <div class="step-label">Your Results</div>
+                </div>
+            </div>
+
+            <h2>Over the last 2 weeks, how often have you been bothered by any of the following problems?</h2>
+            <p class="note">Please note, all fields are required.</p>
+
+            <form id="depression-test">
+                <div class="question">
+                    <label>1. Little interest or pleasure in doing things</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>2. Feeling down, depressed, or hopeless</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>3. Trouble falling or staying asleep, or sleeping too much</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>4. Feeling tired or having little energy</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>5. Poor appetite or overeating</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>7. Trouble concentrating on things, such as reading the newspaper or watching television</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>8. Moving or speaking so slowly that other people could have noticed, or the opposite - being so fidgety or restless that you have been moving around a lot more than usual</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>9. Thoughts that you would be better off dead, or of hurting yourself</label>
+                    <div class="options">
+                        <button type="button" class="option">Not At All</button>
+                        <button type="button" class="option">Several Days</button>
+                        <button type="button" class="option">More Than Half The Days</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>10. If you checked off any problems, how difficult have these problems made it for you at work, home, or with other people?</label>
+                    <div class="options">
+                        <button type="button" class="option">Not Difficult At All</button>
+                        <button type="button" class="option">Somewhat Difficult</button>
+                        <button type="button" class="option">Very Difficult</button>
+                    </div>
+                </div>
+
+                <div class="next-button">
+                    <button type="button">
+                        <span>Next</span> &gt;
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll(".option").forEach(option => {
+            option.addEventListener("click", () => {
+                const options = option.parentElement.querySelectorAll(".option");
+                options.forEach(opt => opt.classList.remove("selected"));
+                option.classList.add("selected");
+            });
+        });
+
+        document.querySelector(".next-button button").addEventListener("click", async () => {
+            let answers = [];
+            document.querySelectorAll(".question").forEach((question) => {
+                const selected = question.querySelector(".option.selected");
+                if (selected) {
+                    answers.push(selected.innerText);
+                } else {
+                    answers.push("Not Selected");
+                }
+            });
+
+            if (answers.includes("Not Selected")) {
+                alert("Please answer all questions before proceeding.");
+                return;
+            }
+
+            try {
+                const response = await fetch("predict", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ answers }),
+                });
+                const result = await response.json();
+                alert("Prediction Result: " + result.prediction);
+            } catch (error) {
+                alert("An error occurred while getting the prediction.");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Image Analysis</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://cdn.gamma.app/ui1cyzwopcg4a11/generated-images/oB-M_cowsRNuE-Wc1Xbm0.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn-primary {
+            padding: 15px 25px;
+            font-size: 1rem;
+            background: linear-gradient(135deg, #828282, #292a29);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .hero .btn-primary:hover {
+            background: linear-gradient(135deg, #5a9aa5, #3f9e9f);
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
+
+        .steps-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .step.popout {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1rem;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .upload-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .upload-button {
+            margin: 20px 0;
+        }
+
+        .upload-button input[type="file"] {
+            display: none;
+        }
+
+        .upload-button label {
+            padding: 15px 25px;
+            font-size: 1rem;
+            background: linear-gradient(135deg, #828282, #292a29);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .upload-button label:hover {
+            background: linear-gradient(135deg, #5a9aa5, #3f9e9f);
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-display {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-display h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .result-display p {
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const resultDisplay = document.getElementById('result-display');
+            if (file) {
+                resultDisplay.innerHTML = `
+                    <h3>Uploaded File</h3>
+                    <p>File Name: ${file.name}</p>
+                    <p>File Size: ${(file.size / 1024).toFixed(2)} KB</p>
+                    <p>Status: Analysis in progress...</p>
+                `;
+            } else {
+                resultDisplay.innerHTML = '<p>No file uploaded. Please select a file.</p>';
+            }
+        }
+
+        function scrollToSteps() {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('popout');
+                    setTimeout(() => step.classList.remove('popout'), 1000); // Remove popout class after 1 second
+                }, index * 200); // Delays each step's animation by 200ms
+            });
+        }
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const resultDisplay = document.getElementById('result-display');
+
+            if (file) {
+                resultDisplay.innerHTML = `
+                    <h3>Uploaded File</h3>
+                    <p>File Name: ${file.name}</p>
+                    <p>File Size: ${(file.size / 1024).toFixed(2)} KB</p>
+                    <p>Status: Analysis in progress...</p>
+                `;
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            resultDisplay.innerHTML = `<p>Error: ${data.error}</p>`;
+                        } else {
+                            resultDisplay.innerHTML = `
+                            <h3>Molecule Name: ${data.match}</h3>
+                            <p>Match Score: ${data.score}</p>
+                            <pre>${JSON.stringify(data.details, null, 2)}</pre>
+                        `;
+                        }
+                    })
+                    .catch(error => {
+                        resultDisplay.innerHTML = `<p>Error: ${error}</p>`;
+                    });
+            } else {
+                resultDisplay.innerHTML = '<p>No file uploaded. Please select a file.</p>';
+            }
+        }
+
+
+
+
+        function scrollToSteps() {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('popout');
+                    setTimeout(() => step.classList.remove('popout'), 1000); // Remove popout class after 1 second
+                }, index * 200); // Delays each step's animation by 200ms
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Medical Image Analysis: Fast and Accurate</h1>
+            <p>Effortlessly analyze your medical images with our intuitive web application. Upload, analyze, and get
+                insights in seconds.</p>
+            <button class="btn-primary" onclick="scrollToSteps()">Start Analyzing</button>
+        </div>
+    </header>
+
+    <section id="steps-section" class="steps-section">
+        <div class="container">
+            <h2>How to Use the Application</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <h3>Step 1</h3>
+                    <p>Select your medical image by clicking the upload button.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2</h3>
+                    <p>Our system processes the uploaded image for analysis.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3</h3>
+                    <p>View the detailed results displayed below.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 4</h3>
+                    <p>Download the analyzed report for further use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upload-section">
+        <div class="container">
+            <h2>Upload Your Image</h2>
+            <div class="upload-button">
+                <input type="file" id="file-input" accept="image/*" onchange="handleFileUpload(event)">
+                <label for="file-input">Select File</label>
+            </div>
+            <div id="result-display" class="result-display">
+                <h3>Results</h3>
+                <p>No file uploaded yet. Please select a file to analyze.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
