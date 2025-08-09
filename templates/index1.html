@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedScanAI</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>
  /*naviagation bar */
 * {
@@ -78,12 +78,12 @@ nav ul li a:hover {
 
   <!-- Navigation Bar -->
   <nav>
-    <a href="/" class="logo">MedScanAI</a>
+    <a href="{{ url_for('home') }}" class="logo">MedScanAI</a>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="/login">Login</a></li>
+      <li><a href="{{ url_for('login') }}">Login</a></li>
     </ul>
   </nav>
 
@@ -94,7 +94,7 @@ nav ul li a:hover {
         <h1 style="font-size: 3.2rem;">MedScanAI: Revolutionizing Healthcare</h1>
         <p style="font-size: 1.2rem;">Empowering patients with AI-driven health insights and personalized care.</p>
         <div class="buttons">
-          <a href="/login">
+          <a href="{{ url_for('login') }}">
   <button class="btn btn-primary">Get Started</button>
 </a>
 
@@ -102,7 +102,7 @@ nav ul li a:hover {
         </div>
       </div>
       <div class="image">
-        <img src="/assets/h1.jpg" alt="MedScanAI">
+        <img src="{{ url_for('serve_template_assets', filename='h1.jpg') }}" alt="MedScanAI">
       </div>
     </div>
   </section>
@@ -168,7 +168,7 @@ nav ul li a:hover {
             <h2>Personalized Insights</h2>
             <p>Receive personalized reminders and alerts to help you stay on track with your medication regimen.</p>
           </div>
-          <a href="/medi_scan/" class="btn btn-primary">Click Here</a>
+           <a href="{{ url_for('medicine.home') }}" class="btn btn-primary">Click Here</a>
         </div>
       </div>
       <div class="image">
@@ -200,7 +200,7 @@ nav ul li a:hover {
           <h2>Blood Tests</h2>
           <p>Share your blood test results to receive a detailed interpretation from our AI experts.</p>
         </div>
-        <a href="/x_ray/" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
+        <a href="{{ url_for('xray.xray_home') }}" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
       </div>
     </div>
   </section>
@@ -234,7 +234,7 @@ nav ul li a:hover {
             </div>
           </div>
         </div>
-        <a href="/health_qa/" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
+        <a href="{{ url_for('healthqa.index') }}" class="btn btn-primary" style="margin-top: 1.5rem;">Click Here</a>
       </div>
       <div class="image">
         <img src="https://cdn.gamma.app/ggac5xzx1599xch/generated-images/PPu82JDT0OWckPKbr-7Qv.jpg" alt="Health Q&A">
@@ -272,7 +272,7 @@ nav ul li a:hover {
             <p>Discover hospitals, clinics, and other medical facilities in your area.</p>
           </div>
         </div>
-        <a href="/nearby_help/" class="btn btn-primary">Click Here</a>
+        <a href="{{ url_for('nearby.nearby_home') }}" class="btn btn-primary">Click Here</a>
       </div>
     </div>
   </section>
@@ -303,12 +303,12 @@ nav ul li a:hover {
             <h2>Seek Professional Guidance</h2>
             <p>Based on your answers, it's strongly recommended that you consult a mental health professional. We're
               here to help connect you.</p>
-            <a href="/mental_health/" class="click-button">Click Here</a>
+            <a href="{{ url_for('mental.mental_health') }}" class="click-button">Click Here</a>
           </div>
         </div>
       </div>
       <div class="illustration">
-        <img src="/assets/image 2.webp" alt="Mental Health Illustration">
+        <img src="{{ url_for('serve_template_assets', filename='image 2.webp') }}" alt="Mental Health Illustration">
       </div>
     </div>
   </section>
