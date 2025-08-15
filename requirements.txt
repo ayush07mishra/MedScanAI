@@ -1,21 +1,21 @@
 --only-binary=:all:
 
-Flask==2.3.3
-numpy==1.26.4
-pandas==2.2.2
-opencv-python-headless==4.8.1.78
-Pillow==10.2.0
-pi-heif==0.16.0
+Flask
+numpy
+pandas
+opencv-python-headless
+Pillow
+pi-heif
 
-fuzzywuzzy==0.18.0
-python-Levenshtein==0.12.2
-easyocr==1.7.1                   # may still require building
-torch==2.2.2
-torchaudio==2.2.2
-torchvision==0.17.2
+fuzzywuzzy
+python-Levenshtein
+easyocr                   # may still require building
+torch
+torchaudio
+torchvision
 --extra-index-url https://download.pytorch.org/whl/cpu
 
-gunicorn==23.0.0
-geopy==2.4.1
-requests==2.31.0
-scikit-learn==1.4.2
+gunicorn
+geopy
+scikit-learn
+requests
