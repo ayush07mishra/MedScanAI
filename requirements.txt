@@ -5,16 +5,14 @@ numpy==1.26.4
 pandas==2.2.2
 opencv-python-headless==4.8.1.78
 Pillow==10.2.0
-pi-heif==<latest-with-wheel>     # lighter, with broad support
-# Or if you definitely need pillow-heif, pin an older version:
-# pillow-heif==0.2.2
+pi-heif==0.16.0
 
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
 easyocr==1.7.1                   # may still require building
-torch==2.2.2+cpu
-torchaudio==2.2.2+cpu
-torchvision==0.17.2+cpu
+torch==2.2.2
+torchaudio==2.2.2
+torchvision==0.17.2
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 gunicorn==23.0.0
