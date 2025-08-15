@@ -7,7 +7,10 @@ pillow-heif==0.16.1
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
 easyocr==1.7.1
-torch==2.2.2
+torch==2.2.2+cpu
+torchaudio==2.2.2+cpu
+torchvision==0.17.2+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
 gunicorn==23.0.0
 geopy==2.4.1
 requests==2.31.0
