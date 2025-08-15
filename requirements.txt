@@ -1,20 +1,23 @@
+--only-binary=:all:
+
 Flask==2.3.3
 numpy==1.26.4
 pandas==2.2.2
 opencv-python-headless==4.8.1.78
 Pillow==10.2.0
-pillow-heif==0.16.1
+pi-heif==<latest-with-wheel>     # lighter, with broad support
+# Or if you definitely need pillow-heif, pin an older version:
+# pillow-heif==0.2.2
+
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
-easyocr==1.7.1
+easyocr==1.7.1                   # may still require building
 torch==2.2.2+cpu
 torchaudio==2.2.2+cpu
 torchvision==0.17.2+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
+
 gunicorn==23.0.0
 geopy==2.4.1
 requests==2.31.0
 scikit-learn==1.4.2
-
-
-
