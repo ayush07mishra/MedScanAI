@@ -6,7 +6,7 @@ pandas
 opencv-python-headless
 Pillow
 pi-heif
-
+pillow-heif
 fuzzywuzzy
 python-Levenshtein
 easyocr                   # may still require building
