@@ -22,10 +22,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 - **Chatbot** – OpenAI GPT / Dialogflow (custom integration)
 
 ---
-
-# LIVE LINK : https://medscanai-pksi.onrender.com/
-
-
 ---
 
 ## 🔐 Authentication Module
@@ -56,6 +52,9 @@ cd MedScanAI
 
 # Install Python dependencies
 pip install -r requirements.txt
+
+
+#LIVE LINK : https://medscanai-pksi.onrender.com/
 
 
 
