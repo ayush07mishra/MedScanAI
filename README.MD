@@ -12,7 +12,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 - ✅ **User Login & Authentication** – Secure login system using Node.js and MongoDB.
 - ✅ **User-Friendly Interface** – Intuitive UI for easy access to medical predictions.
 ---
-
 ## 📂 Tech Stack
 - **Machine Learning & Deep Learning** – TensorFlow, PyTorch, OpenCV
 - **Frontend** – HTML, CSS, JavaScript
