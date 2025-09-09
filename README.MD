@@ -19,7 +19,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 - **Database** – MongoDB (for user login system), Firebase / PostgreSQL (optional for other features)
 - **APIs** – Google Maps API
 - **Chatbot** – OpenAI GPT / Dialogflow (custom integration)
-
 ---
 ---
 
