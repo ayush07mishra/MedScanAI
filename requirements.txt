@@ -9,7 +9,7 @@ pi-heif
 pillow-heif
 fuzzywuzzy
 python-Levenshtein
-easyocr                   # may still require building
+easyocr                   
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 gunicorn
