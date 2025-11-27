@@ -21,7 +21,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 - **Chatbot** – OpenAI GPT / Dialogflow (custom integration)
 ---
 ---
-
 ## 🔐 Authentication Module
 - Built using **Node.js**, **Express**, and **MongoDB**
 - Supports **JWT-based login/signup**
