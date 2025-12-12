@@ -7,7 +7,6 @@ from models.mental_health.app import mental_bp
 from models.x_ray.app import xray_bp
 
 app = Flask(__name__)
-
 # Register Blueprints for each module
 app.register_blueprint(medicine_bp, url_prefix='/medi_scan')
 app.register_blueprint(healthqa_bp, url_prefix='/health_qa')
