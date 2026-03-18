@@ -27,7 +27,7 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 - Middleware to protect medical prediction routes for authenticated users
 
 ---
-## LIVE LINK : https://medscanai-pksi.onrender.com/
+
 
 ## Backend – Auth System (Node.js)
 ## Navigate to auth directory
