@@ -4,7 +4,7 @@
 MedScanAI is an AI-powered medical diagnosis tool designed to assist in detecting abnormalities in medical scans, recognizing medicines, and providing mental health assessments. It integrates deep learning models for accurate predictions and offers a user-friendly interface for seamless interaction.
 ---
 
-#Live Link : https://medscanai-pksi.onrender.com/
+##Live Link : https://medscanai-pksi.onrender.com/
 
 
 
