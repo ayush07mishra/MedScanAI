@@ -17,8 +17,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 
 ### 🔹 Dashboard
 
-https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
-
 ### 🔹 Medical Scan Analysis
 ![Dashboard](https://github.com/user-attachments/assets/aa0d7cab-fc62-4f56-83ff-b40cfb9638c4)
 ![Medical Scan Analysis](https://github.com/user-attachments/assets/29b850e7-0659-4003-951f-8eba8644c9c6)
@@ -31,9 +29,6 @@ https://github.com/user-attachments/assets/26fcbda8-3453-473a-b891-87df811b2215
 
 ### 🔹 Mental Health Assessment
 ![Mental Health Assessment](https://github.com/user-attachments/assets/31f78854-5272-4123-9d41-1c48611f9ae0)
-
-### 🔹 AI Chatbot
-![AI Chatbot](https://github.com/user-attachments/assets/example-chatbot-screenshot)
 
 ### 🔹 Conclusion
 ![User-Friendly Interface](https://github.com/user-attachments/assets/29273a0a-2140-4919-8d3c-1a187146f94e)

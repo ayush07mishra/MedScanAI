@@ -6,7 +6,7 @@ import pickle
 from fuzzywuzzy import process
 from flask import Blueprint, Flask, request, jsonify, render_template
 from PIL import Image
-import pyheif
+from pillow_heif import read_heif
 
 
 
@@ -28,9 +28,9 @@ if os.path.exists(model_path):
 
 # Convert HEIC to JPEG
 def convert_heic_to_supported_format(image_path):
-    heif_file = pyheif.read(image_path)
-    image = Image.frombytes(heif_file.mode, heif_file.size, heif_file.data, heif_file.stride)
-    output_path = image_path.replace(".heic", ".jpg")
+    heif_file = read_heif(image_path)
+    image = Image.frombytes(heif_file.mode, heif_file.size, heif_file.data, "raw")
+    output_path = image_path.rsplit('.', 1)[0] + ".jpg"
     image.save(output_path, format="JPEG")
     return output_path
 
