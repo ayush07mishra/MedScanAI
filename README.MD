@@ -5,7 +5,6 @@ MedScanAI is an AI-powered medical diagnosis tool designed to assist in detectin
 ---
 
 
-
 ## 🚀 Features
 - ✅ **Medical Scan Analysis** – Detect abnormalities in X-rays using CNN models.
 - ✅ **Medicine Recognition** – Identify medicines using AI.
